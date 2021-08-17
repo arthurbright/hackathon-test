@@ -16,7 +16,11 @@ app.get("*", async (req, res) => {
 });
 
 
-
+const uri = "mongodb+srv://testboy:testboy@rest.tmyts.mongodb.net/ht6test?retryWrites=true&w=majority";
+mongoose.connect(uri, 
+{ useUnifiedTopology: true , useNewUrlParser: true }, ()=>{
+  console.log("Connected to DB");
+})
 
 
 //listen
