@@ -6,13 +6,13 @@ const apiRoute = require('./routes/api');
 const mongoose = require('mongoose');
 
 const app = express();
-app.use('/static', express.static(path.join(__dirname, '/public')));
+app.use('/static', express.static(path.join(path.dirname(__dirname), '/client/public')));
 app.use('/api', apiRoute);
 
 
 //main routes
 app.get("*", async (req, res) => {
-    res.sendFile(path.join(__dirname, "/public/index.html"), "utf-8"); //TODO put in correct address
+    res.sendFile(path.join(path.dirname(__dirname), "/client/public/index.html"), "utf-8"); //TODO put in correct address
 });
 
 
